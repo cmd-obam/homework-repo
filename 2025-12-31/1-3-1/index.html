@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM 탐색기 만들기</title>
+</head>
+<body>
+    
+    <div>
+        <button id="myBtn" class="my-Btn">
+            <span>눌러보세요</span>
+        </button>
+        <div class="result"></div>
+
+    </div>
+
+    <script>
+        const btn = document.querySelector("#myBtn");
+        console.log(`이것은 tagName입니다: ${btn.tagName}`);
+        console.log(`이것은 ID 입니다 : ${btn.id}`);
+        console.log(`이것은 Class입니다 : ${btn.className}`);
+        console.log(`이것은 parentElement입니다 : ${btn.parentElement.tagName}`);
+        console.log(`이것은 children입니다 갯수는 ${btn.children.length}개이며 자식요소는 ${btn.children[0].tagName} 입니다.`);
+
+        const result = document.querySelector(".result");
+          btn.addEventListener("click", function () {
+            if(result.textContent === "") {
+                    result.textContent =
+                        `tagName: ${btn.tagName}\n` +
+                        `id: ${btn.id}\n` +
+                        `className: ${btn.className}\n` +
+                        `parent: ${btn.parentElement.tagName}\n` +
+                        `children: ${btn.children.length} (${btn.children[0].tagName})`;
+                } else {
+                    result.textContent = "";
+                }
+
+        });
+        
+
+  
+    </script>
+
+</body>
+
+
+</html>

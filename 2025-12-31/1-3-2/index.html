@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <title>간단한 프로필 카드 조작하기</title>
+  <style>
+    .profile-card {
+      padding: 16px;
+      border: 1px solid #ccc;
+      width: 200px;
+    }
+
+    .dark-mode {
+      background-color: rgba(103, 105, 77, 1);
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="profile-card" data-user-id="123">
+    <p class="profile-name">이름</p>
+    <button id="actionBtn">버튼</button>
+  </div>
+
+  <script>
+
+    const name = document.querySelector('.profile-name');
+    const card = document.querySelector('.profile-card');
+
+    // 버튼 선택
+    const btn = document.querySelector('#actionBtn');
+
+    btn.addEventListener('click', function () {
+
+        //  이름 변경 너의 이름은 무었인고~
+        name.textContent = '한찬우';
+
+        //  다크모드 토글 클릭 클릭~
+        card.classList.toggle('dark-mode');
+
+        //  dataset 접근하기
+        console.log(card.dataset.userId);
+
+        //  요소 생성과 추가하기
+        const tag = document.createElement('span');
+        tag.textContent = '개발자';
+        card.appendChild(tag);
+
+    });
+
+  </script>
+
+</body>
+</html>
+

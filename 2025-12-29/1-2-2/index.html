@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>장바구니 배열 관리하기</title>
+</head>
+<body>
+    <script>
+        // 빈 배열에 내용 추가하기
+        const cart = [];
+        cart.push({name:"사과", price: 25000});
+        cart.push({name:"바나나", price: 1000});
+        cart.push({name:"무화과", price: 15000});
+        cart.push({name:"딸기", price: 23000});
+
+        console.log("★장바구니 목록★");
+        console.log(cart.map(item => item.name).join(", "));
+
+        // 항목 삭제
+        const index = cart.findIndex(item => item.name === "바나나");
+        if(index !== -1) {
+            cart.splice(index, 1);
+        }
+
+        console.log("★목록 삭제★");
+        console.log(cart.map(item => item.name).join(", "));
+
+        // 정렬하기
+        console.log("★정렬하기★")
+        cart.sort((a,b) => a.price - b.price);
+        console.log(cart.map(item => item.name).join(", "));    
+
+    </script>
+</body>
+</html>

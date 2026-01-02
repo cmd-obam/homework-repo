@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>학생 정보 객체 관리하기</title>
+</head>
+<body>
+    <script>
+
+        const student = {
+            name: "철수",
+            age: 30,
+            scores : {
+                math: 60,
+                english: 90
+            }
+            
+        }
+            function getProperty(obj, key) {
+                return obj[key];
+            }
+
+            function getAverage(scores) {
+                return (scores.math + scores.english) / 2;
+            }
+
+            console.log(`${getProperty(student, "name")}의 평균점수는 ${getAverage(student.scores)}점입니다.`);
+
+            const copy2 = JSON.parse(JSON.stringify(student));
+            copy2.scores.math = 100; 
+             console.log(`${getProperty(student, "name")}의 평균점수는 ${getAverage(student.scores)}점입니다.`);
+            console.log(`${getProperty(student, "name")}의 변경된 평균점수는 ${getAverage(copy2.scores)}점입니다`);
+    </script>
+</body>
+</html>
