@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이벤트 위임</title>
+</head>
+<body>
+    <div class="button-group">
+        <button data-action="add">추가</button>
+        <button data-action="edit">수정</button>
+        <button data-action="delete">삭제</button>
+        <button data-action="copy">복사</button>
+    </div>
+
+    <script>
+        const group = document.querySelector(".button-group");
+           group.addEventListener('click', handleClick);
+        
+           function handleClick(e){
+            const btn = e.target.closest('button');
+            if (!btn) return;
+
+            const action = btn.dataset.action;
+
+            switch (action) {
+                case 'add' :
+                    console.log('추가 버튼 클릭');
+                    break;
+
+                case 'edit' :
+                    console.log('수정 버튼 클릭');
+                    break;
+                case 'delete' :
+                    console.log('삭제 버튼 클릭');
+                    break;
+                default :
+                    console.log('다시클릭해줘!');
+            }
+           }
+    </script>
+</body>
+</html>
