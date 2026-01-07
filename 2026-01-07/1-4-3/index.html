@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>클로저로 카운터 모듈 만들기</title>
+</head>
+<body>
+    <script>
+
+            function createCounter() {
+            let count = 0;
+
+            return {
+                increment() {
+                count++;
+                return count;
+                },
+
+                decrement() {
+                count--;
+                return count;
+                },
+
+                getValue() {
+                return count;
+                },
+
+                reset() {
+                count = 0;
+                return count;
+                }
+            };
+            }
+
+            const counter1 = createCounter();
+            const counter2 = createCounter();
+
+            // 0개 카운팅
+            console.log(counter1.getValue());
+
+            //두번찍으면 2
+            counter1.increment();
+            counter1.increment();
+            console.log(counter1.getValue());
+
+            //1번 찍으면 1
+            counter1.decrement();
+            console.log(counter1.getValue());
+
+            // 리셋해보기
+            counter1.reset();
+            console.log(counter1.getValue());
+
+            //counter2번이지만 increment가 없으니 0
+            console.log(counter2.getValue());
+
+            //1개 찍기
+            counter2.increment();
+            console.log(counter2.getValue());
+
+            //출력
+    </script>
+</body>
+</html>
