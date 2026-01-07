@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    
+    <script>
+        const hero = {
+                name: 'Batman',
+                call() {
+                        console.log(this.name);
+                    }
+                };
+
+
+                const stolenCall = hero.call;
+                stolenCall(); 
+
+
+                const fixedCall = hero.call.bind(hero);
+                fixedCall(); 
+
+
+                const hero2 = {
+                name: 'Batman',
+                callLater() {
+
+                        setTimeout(function () {
+                        console.log(this.name);
+                        }, 0);
+                    }
+                };
+
+                hero2.callLater();
+
+    </script>
+</body>
+</html>
