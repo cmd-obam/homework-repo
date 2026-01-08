@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>카페 주문 흐름 시뮬레이션</title>
+</head>
+<body>
+    
+
+    <script>
+        console.log('1. 가게오픈')
+
+        setTimeout(() => {
+            console.log('2. 일반 손님 주문 완료');
+        },0);
+
+        Promise.resolve().then(() => {
+            console.log('3. VIP 손님 입장');
+        });
+
+        console.log('4. 재료준비')
+
+        // 요구사항 1번 : 순서는 1 - 4 - 3 - 2 번 순으로 실행된다
+        // 요구사항 2번 : Promise가 setTimeout보다 우선순위가 더 높기때문에 Promise가 먼저 실행된 이후 setTimeout이 실행된다
+        // 요구사항 3번 : setTimeout의 초가 1초가 되어도 우선 순위가 Promise가 더 높기 때문에 1 - 4 - 3 2 의 순서대로 실행된다.
+
+    </script>
+
+</body>
+</html>
