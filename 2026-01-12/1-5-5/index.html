@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>안전한 피자 키오스크</title>
+</head>
+<body>
+
+
+    <script>
+
+        //미션 1
+        function orderPizza(menu) {
+            console.log(menu + "주문 접수중");
+
+            if(Math.random() < 0.2) {
+                throw new Error ("죄송합니다. 재료가 소진되었습니다.");
+            }
+
+            return menu + "준비완료"
+        };
+
+        function kiosk() {
+            console.log("===키오스크 작동중===");
+
+            try {
+            const result = orderPizza('페퍼로니');
+            console.log(result);
+            } catch(error) {
+                console.log('죄송합니다. 재료가 소진되었습니다.')
+            }
+
+        }
+
+        kiosk();
+
+
+        // 미션 2
+
+            function orderPizza(menu) {
+            console.log(`${menu} 주문 접수중`);
+
+            return new Promise((resolve, reject) => {
+                setTimeout(() => {
+ 
+                if (Math.random() < 0.2) {
+                    reject(new Error("재료가 모두 소진되었습니다."));
+                    return;
+                }
+
+                resolve(`${menu} 준비완료`);
+                }, 1000); 
+            });
+            }
+
+            async function kiosk() {
+            console.log("===키오스크 작동중===");
+
+            try {
+                const result = await orderPizza("페퍼로니");
+                console.log(result);
+            } catch (error) {
+
+                console.log("죄송합니다, 재료가 소진되었습니다");
+            } finally {
+
+                console.log("이용해 주셔서 감사합니다");
+            }
+            }
+
+            // 실행
+            kiosk();
+
+        
+
+
+
+
+    </script>
+
+    
+</body>
+</html>
