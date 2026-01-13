@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>문자열 조작 함수 만들기</title>
+</head>
+<body>
+
+    <script>
+        // 요구 사항
+        // 1. 문자열 뒤집기 : reverse(str)
+        // ㄴ str.split("") 나누기 / reverse 뒤집기 / join("") 합치기
+        // ㄴ str.split(",") > H,e,l,l,o 
+        // ㄴ str.split(",").reverse() o,l,l,e,H
+        // ㄴ str.split(",").reverse().join(""); olleH
+
+        // 2. 숫자 3자리 패딩 : pedThree(num)
+        // ㄴ return String(n) > n에 숫자가 들어가면 해당 숫자가 출력됨
+        // ㄴ .padStart(1, "0"); > 1은 갯수 "0"앞에 나오는 순자
+        // ㄴ .padstart(1, "5") 55555 + n
+
+
+
+        // 3. 특정 문자 삭제 : removerAll(str, char)
+        // ㄴ return str.replaceAll(char, ""); char에 단어, "" 키워드
+        // ㄴ return str.replaceAll("banana", "a"); > 해당 단어에서 a 삭제
+
+
+
+        // 4. 함수 결과 출력 확인
+
+        function reverse(str) {
+            return str.split("").reverse();
+        }
+        console.log(reverse("Hello"));
+
+
+        function padThree(num) {
+             return String(7).padStart(5, "5");
+        }
+        console.log(padThree());    
+
+
+        function removeAll(str, char) {
+             return str.replaceAll(char, "");
+        }
+        console.log(removeAll("banana", "a"));
+    </script>
+    
+</body>
+</html>
