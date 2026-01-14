@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>시간 배분하며 문제 풀기</title>
+</head>
+<body>
+    <script>
+        // 요구사항
+        // 1. 프로그래머스 Level 0 문제 1개 선택
+        // 2. 타이머 설정: 읽기 2분 계획 3분 구현 10분 검증5분
+        // 3. 각 단계에서 한 일을 메모로 정리
+        // 4. 검증 단계에서 경계값, 특수 케이스 텍스트
+
+
+        // 요구사항 1번
+        // ㄴ 피자 나눠 먹기(1)
+
+        // 요구사항 2번
+        // ㄴ 읽기 완료
+        // ㄴ 계획 : 한판 = 7조각  1~7명이 먹으려면 최소 피자 1판 / 8명이면 2판
+        // ㄴ n명을 7로 나눈 나머지를 구해서 나머지가 있으면 +1 나머지가 0이면 몫으로 설정하기
+
+        function solution(n) {
+            if ( n % 7 === 0 ) {
+                return n / 7;
+            }  else {
+                return Math.floor( n / 7 ) + 1;
+            }
+        }
+
+
+
+
+    </script>
+</body>
+</html>
