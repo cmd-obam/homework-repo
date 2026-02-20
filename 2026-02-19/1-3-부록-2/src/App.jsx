@@ -1,18 +1,22 @@
-import { Route, Routes } from "react-router-dom";
-import MainLayout from "./assets/components/layout/MainLayout";
-import MainPage from "./assets/pages/MainPage";
-import WirtePage from "./assets/pages/WirtePage";
-import LoginPage from "./assets/pages/LoginPage";
+import { Routes, Route } from "react-router-dom";
+import { BrowserRouter } from "react-router-dom";
+import Home from "./assets/components/Home";
+import Post from "./assets/components/Post";
+import Frist from "./assets/Post/Frist";
+import Second from "./assets/Post/Second";
+import Three from "./assets/Post/Three";
 
 function App() {
   return (
-    <Routes>
-      <Route element={<MainLayout />}>
-        <Route path="/" element={<MainPage />} />
-        <Route path="/write" element={<WirtePage />} />
-        <Route path="/login" element={<LoginPage />} />
-      </Route>
-    </Routes>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/post" element={<Post />} />
+        <Route path="/frist" element={<Frist />} />
+        <Route path="/second" element={<Second />} />
+        <Route path="/three" element={<Three />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
